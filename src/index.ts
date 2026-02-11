@@ -1,11 +1,9 @@
-// import authRoutes from './modules/auth/auth.routes.js'
-// import guestsRouter from './modules/guest/guest.routes.js';
-import authRoutes from './modules/auth/auth.routes.js';
 import ordersRouter from './modules/orders/orders.routes.js';
 import productRouter from './modules/products/products.routes.js';
 import uploadRouter from './modules/upload/upload.routes.js';
 import express from 'express'
 import cors from "cors";
+import authRoutes from './modules/auth/auth.routes.js';
 const app = express()
 // Aquí agregas middleware **antes** de las rutas
 
