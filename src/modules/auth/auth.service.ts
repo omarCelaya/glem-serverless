@@ -4,6 +4,9 @@ import { supabase } from "../../utils/supabase.js";
 import { JwtPayload, LoginPayload } from "./auth.model.js";
 
 export const loginService = async (payload: LoginPayload) => {
+  try {
+    
+ 
   const { email, password } = payload;
   if (email || password) {
     throw new Error("Not credentials");
@@ -31,4 +34,7 @@ export const loginService = async (payload: LoginPayload) => {
   const token = jwt.sign(newToken, jwtSecret, signOptions);
 
   return { token };
+   } catch (error) {
+        throw new Error("AUTH-SERIVCE ERROR: ", error);
+  }
 };
