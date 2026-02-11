@@ -28,7 +28,7 @@ export const loginService = async (payload: LoginPayload) => {
     expiresIn: process.env.JWT_EXPIRES_IN as StringValue
   };
 
-  const token = jwt.sign(payload, jwtSecret, signOptions);
+  const token = jwt.sign(newToken, jwtSecret, signOptions);
 
   return { token };
 };
