@@ -34,6 +34,7 @@ export const loginService = async (payload: LoginPayload) => {
 
   return { token };
    } catch (error) {
+    console.log(error)
         throw new Error("AUTH-SERIVCE ERROR: ", error);
   }
 };
