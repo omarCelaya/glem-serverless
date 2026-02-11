@@ -14,7 +14,7 @@ export const loginService = async (payload: LoginPayload) => {
   });
 
   if (error || !sessionData.user) {
-    throw new Error("Invalid credentials");
+    throw new Error("Invalid credentials", error);
   }
 
   // 3️⃣ Crear TU JWT
