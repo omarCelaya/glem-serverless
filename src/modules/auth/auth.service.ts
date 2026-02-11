@@ -17,6 +17,8 @@ export const loginService = async (payload: LoginPayload) => {
       });
 
     if (error || !sessionData.user) {
+      console.log("SUPABASE ERROR:", error);
+      console.log("SUPABASE DATA:", sessionData);
       throw new Error(error?.message || "Invalid credentials");
     }
 

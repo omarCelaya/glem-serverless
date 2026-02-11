@@ -13,6 +13,9 @@ export const loginController = async (req: Request, res: Response) => {
     const data = await loginService(payload);
     res.json(data);
   } catch (e) {
-    res.status(401).json({ error: "Invalid credentials", message: e });
+    res.status(401).json({
+      error: "Invalid credentials",
+      message: e instanceof Error ? e.message : "Unknown error"
+    });
   }
 };
