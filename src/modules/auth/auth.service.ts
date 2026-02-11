@@ -15,7 +15,7 @@ export const loginService = async (payload: LoginPayload) => {
     email,
     password,
   });
-
+  
   if (error || !sessionData.user) {
     throw new Error("Invalid credentials", error);
   }
@@ -28,7 +28,7 @@ export const loginService = async (payload: LoginPayload) => {
 
   const jwtSecret: Secret = process.env.JWT_SECRET as string;
   const signOptions: SignOptions = {
-    expiresIn: process.env.JWT_EXPIRES_IN as StringValue
+    expiresIn: 7
   };
 
   const token = jwt.sign(newToken, jwtSecret, signOptions);
