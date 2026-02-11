@@ -1,11 +1,11 @@
-import express from 'express'
 // import authRoutes from './modules/auth/auth.routes.js'
 // import guestsRouter from './modules/guest/guest.routes.js';
-import cors from "cors";
 import authRoutes from './modules/auth/auth.routes.js';
 import ordersRouter from './modules/orders/orders.routes.js';
 import productRouter from './modules/products/products.routes.js';
 import uploadRouter from './modules/upload/upload.routes.js';
+import express from 'express'
+import cors from "cors";
 const app = express()
 // Aquí agregas middleware **antes** de las rutas
 
@@ -29,7 +29,7 @@ app.get('/', (_req, res) => {
   res.send('Hello Express!')
 })
 
-app.use("/eventory/auth",authRoutes);
+app.use("/eventory/auth", authRoutes);
 app.use("/eventory/orders", ordersRouter);
 app.use("/eventory/products", productRouter);
 app.use("/eventory/upload", uploadRouter);
