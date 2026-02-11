@@ -27,10 +27,10 @@ app.get('/', (_req, res) => {
   res.send('Hello Express!')
 })
 
-app.use("/eventory/auth", authRoutes);
-app.use("/eventory/orders", ordersRouter);
-app.use("/eventory/products", productRouter);
-app.use("/eventory/upload", uploadRouter);
+app.use("/glem/auth", authRoutes);
+app.use("/glem/orders", ordersRouter);
+app.use("/glem/products", productRouter);
+app.use("/glem/upload", uploadRouter);
 
 export default app
 
