@@ -4,10 +4,9 @@ import { supabase } from "../../utils/supabase.js";
 import { JwtPayload, LoginPayload } from "./auth.model.js";
 
 export const loginService = async (payload: LoginPayload) => {
-  try {
-    
- 
+  try { 
   const { email, password } = payload;
+  console.log(payload)
   if (email || password) {
     throw new Error("Not credentials");
   }
@@ -15,7 +14,7 @@ export const loginService = async (payload: LoginPayload) => {
     email,
     password,
   });
-  
+  console.log(error)
   if (error || !sessionData.user) {
     throw new Error("Invalid credentials", error);
   }
